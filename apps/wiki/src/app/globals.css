@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-image: url(/shared/background.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.text-link {
+  color: #3e7bad;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.text-link-skin {
+  color: #ebe4cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.text-link-white {
+  color: white;
+  text-decoration: underline;
+}
+
+a.text-link:hover {
+  text-decoration: underline;
+}
+
+a.text-link-skin:hover {
+  text-decoration: underline;
+}
+
+a.text-link-white:hover {
+  color: #ebe4cc;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.scroll {
+  
+  overflow-x: auto;
+}
+
+tbody {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+table > thead > tr > th {
+  background: #538cb8;
+  border: 1px solid #a5b6c4;
+  border-bottom-color: rgb(220, 198, 152);
+  border-bottom-width: 1px;
+  border-bottom-color: #dcc698;
+  border-bottom-width: 2px;
+  padding: 3px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 0.2px black;
+}
+
+table > thead > tr > th img {
+  vertical-align: top;
+}
+
+table > tbody > tr > td {
+  background: #ecdec0;
+  border: 1px solid #dcc698;
+  padding: 3px;
+}
+
+table > tbody > tr > th {
+  background: #e2c587;
+  color: #aa822b;
+  border: 1px solid #ecdec0;
+}
+
+table > thead > tr:first-child > th:first-child {
+  border-top-left-radius: 10px;
+}
+
+table > thead > tr:first-child > th:last-child {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.responsive-table-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .responsive-table-container {
+      width: 100%;
+  }
+}
+
+.resource-span {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 10px;
+}

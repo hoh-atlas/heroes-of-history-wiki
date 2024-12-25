@@ -1,0 +1,30 @@
+.prologue-container {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+.prologue-image {
+    width: 24.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prologue-content {
+    flex: 1;
+    color: rgb(85, 83, 83);
+    padding: 10px;
+    line-height: 1.2;
+    font-size: small;
+}
+
+@media (max-width: 700px) {
+    .prologue-container {
+        flex-direction: column;
+    }
+
+    .prologue-image,
+    .prologue-content {
+        width: 100%;
+    }
+}

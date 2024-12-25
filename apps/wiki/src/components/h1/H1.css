@@ -1,0 +1,11 @@
+.custom-h1 {
+    color: #457399;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    /*-webkit-text-stroke: 0.3px black;*/
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    text-align: center;
+}

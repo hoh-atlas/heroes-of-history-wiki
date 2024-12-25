@@ -1,0 +1,129 @@
+section {
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    section {
+        width: 95%;
+    }
+
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .header-left,
+    .header-right {
+        width: 100%;
+        text-align: left;
+    }
+
+    .header-center {
+        justify-content: center;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .section-header img {
+        position: static;
+    }
+
+    .empty {
+        display: none;
+    }
+
+    .empty-selectbox {
+        margin-top: 5px;
+    }
+}
+
+.section-header {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #3e7bad;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 34px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section-header .custom-selectbox {
+    position: initial;
+    top: initial;
+    right: initial;
+    width: auto;
+    cursor: auto;
+    color: initial;
+}
+
+.section-header img {
+    position: absolute;
+    top: 3px;
+    right: 6px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.section-body {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    background-color: rgb(235, 228, 204);
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.option-label {
+    color: initial;
+}
+
+.selected-label {
+    color: initial;
+}
+
+.option-icon {
+    position: unset !important;
+    top: unset !important;
+    right: unset !important;
+    margin-bottom: -4px;
+}
+
+.selected-icon {
+    position: unset !important;
+    top: unset !important;
+    right: unset !important;
+    margin-bottom: -4px;
+}
+
+.content-section {
+    margin-left: 20px;
+    margin-right: 20px;
+}

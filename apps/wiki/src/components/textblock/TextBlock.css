@@ -1,0 +1,22 @@
+.textblock {
+    /*background-color: #e8d7b2;*/
+    background-clip: border-box;
+    /*border: 1px solid rgb(50, 119, 197);*/
+    border-radius: 0.50rem;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: rgb(85, 83, 83);
+}
+
+.textblock.centered {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .textblock {
+        font-size: 15px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

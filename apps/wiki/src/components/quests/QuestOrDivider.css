@@ -1,0 +1,52 @@
+.quest-or-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 19px;
+    margin: 4px;
+    margin-top: -8.5px;
+    margin-bottom: -8.5px;
+}
+
+.quest-or-line {
+    width: 100%;
+    height: 2px;
+    vertical-align: middle;
+    background: linear-gradient(to right, transparent, #6bbcc9, #6bbcc9, #6bbcc9, transparent);
+}
+
+.quest-or-icon-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.quest-or-icon {
+    width: 60px;
+    height: 19px;
+    background-color: #6bbcc9;
+    border-radius: 90px;
+}
+
+.quest-or-label-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.quest-or-label {
+    line-height: 15px;
+    color: #25778a;
+}

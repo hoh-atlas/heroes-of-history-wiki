@@ -1,0 +1,126 @@
+.intro-container {
+    background-color: #1d5d92;
+    padding: 0;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.intro-heading-wrapper {
+    background-color: #3e7bad;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid #2c5a7a;
+}
+
+.intro-heading {
+    margin: 0;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.intro-text-wrapper {
+    background-color: #5f97c2;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.intro-text-container {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.intro-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: #ebe4cc;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.intro-text.show {
+    opacity: 1;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 3;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.slider-arrow:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulsate {
+    animation: pulsate 3s infinite;
+}
+
+@media (max-width: 768px) {
+    .intro-container {
+        width: 95%;
+    }
+
+    .intro-heading {
+        font-size: 20px;
+    }
+
+    .intro-text-wrapper {
+        padding: 10px;
+    }
+
+    .intro-text {
+        font-size: 14px;
+    }
+
+    .slider-arrow {
+        padding: 6px;
+        font-size: 16px;
+    }
+}

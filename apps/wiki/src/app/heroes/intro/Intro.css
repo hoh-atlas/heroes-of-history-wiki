@@ -1,0 +1,51 @@
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0px;
+    justify-items: center;
+    padding-top: 1%;
+}
+
+.hero-category {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 20px;
+    /*border: 2px solid #3e7bad;*/
+    border-radius: 10px;
+    background-color: #ecdec0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.select-boxes-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.select-box-column {
+    flex: 1;
+}
+
+.search-box {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+.btn {
+    background-color: #3e7bad;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+}

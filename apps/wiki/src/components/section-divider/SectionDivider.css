@@ -1,0 +1,6 @@
+.section-divider {
+    height: 1px;
+    background-image: linear-gradient(to left, rgba(62, 123, 173, 0) 0%, #3e7bad 10%, #3e7bad 90%, rgba(62, 123, 173, 0) 100%);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

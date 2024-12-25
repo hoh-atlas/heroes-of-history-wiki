@@ -1,0 +1,45 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3367b4;
+    border-radius: 15px 15px 0px 0px;
+    background-image: url('/shared/navbar.png');
+    background-repeat: repeat-x;
+    background-position: left bottom -7px;
+    text-align: center;
+    color: rgb(235, 228, 204);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: small;
+    z-index: 100;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+.text-group {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    margin: 1px 50px;
+}
+
+.left {
+    margin-right: auto;
+}
+
+.middle {
+    margin: 0 auto;
+}
+
+.right {
+    margin-left: auto;
+}

@@ -1,0 +1,7 @@
+.chest-image {
+    transition: transform 0.3s ease;
+}
+
+.chest-image:hover {
+    transform: scale(1.1);
+}

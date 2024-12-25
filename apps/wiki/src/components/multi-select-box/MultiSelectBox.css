@@ -1,0 +1,28 @@
+@media only screen and (max-width: 768px) {
+    .country-option {
+        font-size: 12px;
+    }
+  
+    .option-icon {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+  
+    .selected-icon {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+  
+    .multi-selected-icon {
+        max-width: 15px;
+        max-height: 15px;
+        margin-right: 5px;
+    }
+  
+    .option-label, .multi-selected-label {
+        font-size: 12px;
+    }
+  }
+  

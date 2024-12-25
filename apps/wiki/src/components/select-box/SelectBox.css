@@ -1,0 +1,15 @@
+.country-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.option-icon {
+    width: 25px;
+    margin-right: 8px;
+}
+
+.selected-icon {
+    width: 25px;
+    margin-right: 8px;
+}

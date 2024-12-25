@@ -1,0 +1,45 @@
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu-item {
+    background: linear-gradient(to bottom, 
+                #82adcf 0%, #82adcf 5%, 
+                #3E7BAD 5%, #3E7BAD 95%, 
+                #82adcf 95%, #82adcf 100%);
+    padding-bottom: 10px;
+    padding-top: 2px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #1d4468;
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    background-color: #0056b3;
+}
+
+.menu-text {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.menu-icon {
+    height: 50px;
+    width: auto;
+}
+
+.single-item {
+    grid-column: 2 / 3;
+}

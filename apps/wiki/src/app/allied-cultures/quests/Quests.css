@@ -1,0 +1,46 @@
+.questlines-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    max-width: 100%;
+    transform-origin: center top;
+}
+
+@media screen and (max-width: 1200px) {
+    .questlines-container {
+        transform: scale(0.9);
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .questlines-container {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .questlines-container {
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .questlines-container {
+        transform: scale(0.6);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .questlines-container {
+        transform: scale(0.58);
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .questlines-container {
+        transform: scale(0.54);
+    }
+}

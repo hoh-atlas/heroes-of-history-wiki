@@ -1,0 +1,131 @@
+/* 700px and more */
+nav {
+    background-color: #3367b4;
+    border-radius: 0px 0px 15px 15px;
+    background-image: url('/shared/navbar.png');
+    background-repeat: repeat-x;
+    background-position: left bottom -7px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+}
+
+.nav-header img {
+    width: 110px;
+    margin-left: 30px;
+    vertical-align: middle;
+}
+
+.nav-header button {
+    cursor: pointer;
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-list ul {
+    margin-right: 20px;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #e5e5e5;
+    font-size: 0.9rem;
+}
+
+.nav-list a:hover {
+    color: #da8641;
+}
+
+.nav-list a:hover .nav-icon {
+    transform: scale(1.05);
+}
+
+.nav-icon {
+    width: 24px;
+    margin-right: 3px;
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Less than 700px */
+@media (max-width: 1044px) {
+    .navigation {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .nav-header {
+        width: 100%;
+    }
+
+    .nav-header button {
+        cursor: pointer;
+        display: block;
+        background-color: transparent;
+        border: none;
+    }
+
+    .hamburger-icon {
+        color: #e5e5e5;
+        font-size: 22px;
+        margin-right: 15px;
+    }
+
+    .nav-list li {
+        width: 100%;
+        padding: 8px 3px;
+    }
+
+    .nav-list a {
+        font-size: 0.85rem;
+    }
+
+    .nav-icon {
+        width: 18px;
+        margin-right: 2px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hide {
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.1s linear;
+    }
+
+    .show {
+        height: 360px;
+    }
+
+    nav .show {
+        background-image: url('/navbar/background_mobile.webp');
+        background-repeat: repeat-x;
+        background-position: left bottom -7px;
+    }
+}
