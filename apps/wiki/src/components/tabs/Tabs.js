@@ -1,4 +1,5 @@
 import "./Tabs.css";
+import Link from "next/link";
 
 const Tabs = (props) => {
 
