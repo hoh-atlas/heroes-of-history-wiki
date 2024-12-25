@@ -5,12 +5,19 @@ import { useTabHandler } from "@/src/components/tabs/useTabHandler";
 import Intro from "./intro/Intro";
 import VideoCreators from "./video-creators/VideoCreators";
 import PrivacyPolicy from "./privacy-policy/PrivacyPolicy";
+import ReactGA from "react-ga4";
 
 const CommunityPage = () => {
 
   	const basePath = "community";
 
   	const selectedTab = useTabHandler(layoutCommunity);
+
+	  ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Community - ${selectedTab.name}`,
+    });
 
 	const pageName = selectedTab.url ? (
         <span>

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Container from "@/src/components/container/Container";
 import SelectBox from "@/src/components/select-box/SelectBox";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
+import ReactGA from "react-ga4";
 
 import layoutLeaderboards from "./sectionsDefinition";
 import allLeaderboards from "./data";
@@ -17,6 +18,12 @@ const LeaderboardsPage = (props) => {
 	const basePath = "leaderboards";
 
 	const selectedTab = useTabHandler(layoutLeaderboards);
+
+    ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Leaderboards - ${selectedTab.name}`,
+    });
 
 	const pageName = selectedTab.url ? (
 		<span>

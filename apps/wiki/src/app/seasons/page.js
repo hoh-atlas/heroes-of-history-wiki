@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Container from "@/src/components/container/Container";
 import SelectBox from "@/src/components/select-box/SelectBox";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
+import ReactGA from "react-ga4";
 
 import layoutSeasons from "./sectionsDefinition";
 import allSeasons from "./data";
@@ -17,6 +18,12 @@ const SeasonsPage = (props) => {
 	const basePath = "seasons";
 
 	const selectedTab = useTabHandler(layoutSeasons);
+
+    ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Seasons - ${selectedTab.name}`,
+    });
 
 	const pageName = selectedTab.url ? (
 		<span>

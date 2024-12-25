@@ -5,12 +5,19 @@ import Container from "@/src/components/container/Container";
 import layoutHome from "./sectionsDefinition";
 import Intro from "./intro/Intro";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
+import ReactGA from "react-ga4";
 
 const HomePage = (props) => {
 
     const basePath = "";
 
     const selectedTab = useTabHandler(layoutHome);
+
+    ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Home - ${selectedTab.name}`,
+    });
 
     const pageName = selectedTab.url ? (
         <span>

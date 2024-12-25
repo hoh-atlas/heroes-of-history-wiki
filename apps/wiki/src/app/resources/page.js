@@ -9,12 +9,19 @@ import Goods from "./goods/Goods";
 import Research from "./research/Research";
 import Crests from "./crests/Crests";
 import Ascension from "./ascension/Ascension";
+import ReactGA from "react-ga4";
 
 const ResourcesPage = () => {
 
   	const basePath = "resources";
 
   	const selectedTab = useTabHandler(layoutResources);
+
+    ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Resources - ${selectedTab.name}`,
+    });
 
 	const pageName = selectedTab.url ? (
         <span>

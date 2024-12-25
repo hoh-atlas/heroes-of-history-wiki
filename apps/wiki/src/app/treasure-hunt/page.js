@@ -5,12 +5,19 @@ import { useTabHandler } from "@/src/components/tabs/useTabHandler";
 import Intro from "./intro/Intro";
 import Checkpoints from "./checkpoints/Checkpoints";
 import Customizations from "./customizations/Customizations";
+import ReactGA from "react-ga4";
 
 const TreasureHuntPage = () => {
 
   	const basePath = "treasure-hunt";
 
   	const selectedTab = useTabHandler(layoutTreasureHunt);
+
+	ReactGA.send({
+		hitType: "pageview",
+		page: `/${basePath}`,
+		title: `Treasure Hunt - ${selectedTab.name}`,
+	});
 
 	const pageName = selectedTab.url ? (
         <span>

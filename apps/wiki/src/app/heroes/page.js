@@ -6,12 +6,19 @@ import layoutHeroes from "./sectionsDefinition";
 import Intro from "./intro/Intro";
 import { allHeroes } from "./data";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
+import ReactGA from "react-ga4";
 
 const HeroesPage = () => {
 
     const basePath = "heroes";
 
     const selectedTab = useTabHandler(layoutHeroes);
+
+    ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Heroes - ${selectedTab.name}`,
+    });
 
     const router = useRouter();
 

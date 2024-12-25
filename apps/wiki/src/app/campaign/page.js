@@ -4,12 +4,19 @@ import Container from "@/src/components/container/Container";
 import Intro from "./intro/Intro";
 import Provinces from "./provinces/Provinces";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
+import ReactGA from "react-ga4";
 
 const CampaignPage = () => {
 
   	const basePath = "campaign";
 
   	const selectedTab = useTabHandler(layoutCampaign);
+
+	  ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Campaign - ${selectedTab.name}`,
+    });
 
 	const pageName = selectedTab.url ? (
         <span>

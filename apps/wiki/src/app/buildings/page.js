@@ -4,12 +4,19 @@ import Container from "@/src/components/container/Container";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
 import Intro from "./intro/Intro";
 import Collectable from "./collectable/Collectable";
+import ReactGA from "react-ga4";
 
 const BuildingsPage = () => {
 
   	const basePath = "buildings";
 
   	const selectedTab = useTabHandler(layoutBuildings);
+
+	  ReactGA.send({
+        hitType: "pageview",
+        page: `/${basePath}`,
+        title: `Buildings - ${selectedTab.name}`,
+    });
 
 	const pageName = selectedTab.url ? (
         <span>
