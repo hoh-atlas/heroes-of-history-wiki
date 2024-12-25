@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "pages:build": "npx @cloudflare/next-on-pages --skip-vercel-cli",
-    "preview": "npm run pages:build && wrangler pages dev",
-    "deploy": "npm run pages:build && wrangler pages deploy"
+    "dev": "next dev",
+    "clean": "rimraf .next",
+    "build": "npm run clean && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "_pages:build": "npx @cloudflare/next-on-pages --skip-vercel-cli",
+    "_preview": "npm run pages:build && wrangler pages dev",
+    "_deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "next": "^13.0.0",
