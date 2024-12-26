@@ -5,6 +5,8 @@ import Intro from "./intro/Intro";
 import Provinces from "./provinces/Provinces";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
 import ReactGA from "react-ga4";
+import { updateMeta } from "@/src/shared-resources/utils/utils";
+import { useEffect } from "react";
 
 const CampaignPage = () => {
 
@@ -17,6 +19,10 @@ const CampaignPage = () => {
         page: `/${basePath}`,
         title: `Campaign - ${selectedTab.name}`,
     });
+
+	useEffect(() => {
+		updateMeta("Campaign", selectedTab, basePath);
+	}, [selectedTab]);
 
 	const pageName = selectedTab.url ? (
         <span>

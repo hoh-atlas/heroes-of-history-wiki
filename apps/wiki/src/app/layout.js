@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
 	useEffect(() => {
 		ReactGA.initialize("G-TH20891YX2");
 	}, []);
+	console.log("CHILDREN: ", children)
 	
 	return (
 		<html lang="en">

@@ -1,7 +1,7 @@
 import "./Intro.css";
 import "../../../../components/table/Table.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { allHeroes, heroClassIcons, unitIcons, backdrops, heroClassNames, unitNames, colorIcons, colorNames, positionNames, damageTypeNames, tacticalTypeNames } from "../../data";
 import levelsExperiences from "../../_data/levelsExperiences";
 import ascensions from "../../_data/ascensions";

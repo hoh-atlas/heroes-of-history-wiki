@@ -7,6 +7,8 @@ import Intro from "./intro/Intro";
 import { allHeroes } from "./data";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
 import ReactGA from "react-ga4";
+import { updateMeta } from "@/src/shared-resources/utils/utils";
+import { useEffect } from "react";
 
 const HeroesPage = () => {
 
@@ -19,6 +21,10 @@ const HeroesPage = () => {
         page: `/${basePath}`,
         title: `Heroes - ${selectedTab.name}`,
     });
+
+    useEffect(() => {
+        updateMeta("Heroes", selectedTab, basePath);
+    }, [selectedTab]);
 
     const router = useRouter();
 

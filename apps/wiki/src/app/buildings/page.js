@@ -5,6 +5,8 @@ import { useTabHandler } from "@/src/components/tabs/useTabHandler";
 import Intro from "./intro/Intro";
 import Collectable from "./collectable/Collectable";
 import ReactGA from "react-ga4";
+import { updateMeta } from "@/src/shared-resources/utils/utils";
+import { useEffect } from "react";
 
 const BuildingsPage = () => {
 
@@ -17,6 +19,10 @@ const BuildingsPage = () => {
         page: `/${basePath}`,
         title: `Buildings - ${selectedTab.name}`,
     });
+
+	useEffect(() => {
+		updateMeta("Buildings", selectedTab, basePath);
+	}, [selectedTab]);
 
 	const pageName = selectedTab.url ? (
         <span>

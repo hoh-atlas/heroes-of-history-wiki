@@ -249,3 +249,23 @@ export const displayRewards = (arrayOfRewards) => {
         </>
     );
 };
+
+export const updateMeta = (pageName, selectedTab, basePath) => {
+	const descriptions = {
+		"allied-cultures": `Explore various Allied Cultures in the game: Egypt, China, Vikings. They all are fully covered in Wiki!`,
+		"another-path": `Explore another topic. Get all the details here.`,
+	};
+
+	const metaTitle = `${pageName} - ${selectedTab.name || "Overview"} | Wiki`;
+	const metaDescription = descriptions[basePath] || "Heroes of History Wiki is a place where you can find information about heroes, battles, events, allied cultures and many written guides to help you better navigate in the game.";
+
+	document.title = metaTitle;
+
+	let metaDescriptionTag = document.querySelector('meta[name="description"]');
+	if (!metaDescriptionTag) {
+		metaDescriptionTag = document.createElement('meta');
+		metaDescriptionTag.name = "description";
+		document.head.appendChild(metaDescriptionTag);
+	}
+	metaDescriptionTag.content = metaDescription;
+};

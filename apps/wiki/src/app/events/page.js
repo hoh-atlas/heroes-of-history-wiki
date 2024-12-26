@@ -6,6 +6,7 @@ import Container from "@/src/components/container/Container";
 import SelectBox from "@/src/components/select-box/SelectBox";
 import { useTabHandler } from "@/src/components/tabs/useTabHandler";
 import ReactGA from "react-ga4";
+import { updateMeta } from "@/src/shared-resources/utils/utils";
 
 import layoutEvents from "./sectionsDefinition";
 import allEvents from "./data";
@@ -26,6 +27,10 @@ const EventsPage = (props) => {
         page: `/${basePath}`,
         title: `Events - ${selectedTab.name}`,
     });
+
+	useEffect(() => {
+		updateMeta("Events", selectedTab, basePath);
+	}, [selectedTab]);
 
 	const pageName = selectedTab.url ? (
 		<span>

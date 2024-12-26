@@ -6,6 +6,8 @@ import Intro from "./intro/Intro";
 import VideoCreators from "./video-creators/VideoCreators";
 import PrivacyPolicy from "./privacy-policy/PrivacyPolicy";
 import ReactGA from "react-ga4";
+import { updateMeta } from "@/src/shared-resources/utils/utils";
+import { useEffect } from "react";
 
 const CommunityPage = () => {
 
@@ -18,6 +20,10 @@ const CommunityPage = () => {
         page: `/${basePath}`,
         title: `Community - ${selectedTab.name}`,
     });
+
+	useEffect(() => {
+		updateMeta("Community", selectedTab, basePath);
+	}, [selectedTab]);
 
 	const pageName = selectedTab.url ? (
         <span>

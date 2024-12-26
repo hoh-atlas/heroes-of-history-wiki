@@ -10,6 +10,8 @@ import Research from "./research/Research";
 import Crests from "./crests/Crests";
 import Ascension from "./ascension/Ascension";
 import ReactGA from "react-ga4";
+import { updateMeta } from "@/src/shared-resources/utils/utils";
+import { useEffect } from "react";
 
 const ResourcesPage = () => {
 
@@ -22,6 +24,10 @@ const ResourcesPage = () => {
         page: `/${basePath}`,
         title: `Resources - ${selectedTab.name}`,
     });
+
+    useEffect(() => {
+        updateMeta("Resources", selectedTab, basePath);
+    }, [selectedTab]);
 
 	const pageName = selectedTab.url ? (
         <span>
