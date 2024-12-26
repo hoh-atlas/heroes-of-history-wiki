@@ -94,9 +94,10 @@ const Intro = (props) => {
 
     const {id, name, codeName, image, icon, backdrop, stars, heroClass, unit, color, abilityIcon, ascension, abilityName, abilityDescription, ability, position, damageType, tacticalType} = hero;
 
-    const currentIndex = allHeroes.findIndex(item => item.id === id);
-    const leftHero = currentIndex > 0 ? allHeroes[currentIndex - 1] : null;
-    const rightHero = currentIndex < allHeroes.length - 1 ? allHeroes[currentIndex + 1] : null;
+    const heroList = props.filteredHeroes.length > 0 ? props.filteredHeroes : allHeroes;
+    const currentIndex = heroList.findIndex(item => item.id === id);
+    const leftHero = currentIndex > 0 ? heroList[currentIndex - 1] : null;
+    const rightHero = currentIndex < heroList.length - 1 ? heroList[currentIndex + 1] : null;
 
     const generateAbilityText = (ability, abilityDescriptions) => {
         const match = ability.id.match(/_([0-9]+)/);

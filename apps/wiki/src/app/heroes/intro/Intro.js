@@ -302,6 +302,12 @@ const Intro = (props) => {
     };
 
     const filteredHeroes = getFilteredHeroes();
+    if (typeof window !== 'undefined') {
+        localStorage.setItem(
+            'filteredHeroes',
+            JSON.stringify(filteredHeroes.map(hero => hero.id))
+        );
+    }
 
     return (
         <>

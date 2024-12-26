@@ -15,6 +15,12 @@ const HeroPage = ({ params }) => {
 
     const selectedTab = useTabHandler(layoutHeroes);
 
+    let filteredHeroes = [];
+    if (typeof window !== "undefined") {
+        const storedHeroIds = JSON.parse(localStorage.getItem('filteredHeroes') || '[]');
+        filteredHeroes = storedHeroIds.map(heroId => allHeroes.find(hero => hero.id === heroId)).filter(Boolean);
+    }
+
     const hero = allHeroes.find((oneHero) => oneHero.id === heroId);
 
     ReactGA.send({
@@ -46,7 +52,7 @@ const HeroPage = ({ params }) => {
     const renderSelectedTab = () => {
         switch (selectedTab.url) {
         default:
-            return <Intro heroId={heroId} />;
+            return <Intro heroId={heroId} filteredHeroes={filteredHeroes} />;
         }
     };
 
