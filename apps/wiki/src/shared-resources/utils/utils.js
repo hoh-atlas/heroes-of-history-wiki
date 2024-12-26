@@ -252,8 +252,17 @@ export const displayRewards = (arrayOfRewards) => {
 
 export const updateMeta = (pageName, selectedTab, basePath) => {
 	const descriptions = {
-		"allied-cultures": `Explore various Allied Cultures in the game: Egypt, China, Vikings. They all are fully covered in Wiki!`,
-		"another-path": `Explore another topic. Get all the details here.`,
+		"allied-cultures": `Explore various Allied Cultures in the game: Egypt, China, Vikings. Each offering comprehensive guides, including tips & tricks, quests, and much more!`,
+        "buildings": `Explore all the buildings in the game. Find all the construction costs, productions and much more!`,
+        "campaign": `Discover the full campaign of the game. Find all the provinces, rewards and much more!`,
+        "community": `Learn how to get in touch with thousands of other players of Heroes of History!`,
+        "events": `Find daily specials, customizations, quests and much more from the seasonal events in Heroes of History!`,
+        "heroes": `Discover all the heroes in the game. Find their abilities, upgrade costs, ascension materials and much more!`,
+        "leaderboards": `Learn everything about the short events in the game, including tasks and comprehensive lists of rewards.`,
+        "research": `Explore the research calculator! Calculate the remaining costs for your current era in the game!`,
+        "resources": `Discover all the resources in the game.`,
+        "seasons": `Learn everything about the seasons in the game, including tasks and rewards.`,
+        "treasure-hunt": `Everything about the Treasure Hunt in Heroes of History. From tips & tricks to comprehensive lists of rewards.`,
 	};
 
 	const metaTitle = `${pageName} - ${selectedTab.name || "Overview"} | Wiki`;
