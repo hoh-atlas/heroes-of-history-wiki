@@ -125,6 +125,36 @@ export const calculateDaysBetween = (startDate, endDate) => {
     return daysDifference;
 };
 
+export const calculateHoursBetween = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+
+    if (isNaN(start) || isNaN(end)) {
+        throw new Error("Invalid date(s) provided.");
+    }
+
+    const timeDifference = end - start; 
+    const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+    return hoursDifference;
+};
+
+export const normalizeToNoon = (date) => {
+    const normalizedDate = new Date(date);
+    const isDST = (d) => {
+        const january = new Date(d.getFullYear(), 0, 1).getTimezoneOffset();
+        const july = new Date(d.getFullYear(), 6, 1).getTimezoneOffset();
+        return d.getTimezoneOffset() < Math.max(january, july);
+    };
+    const offsetHours = isDST(normalizedDate) ? 14 : 13;
+    normalizedDate.setHours(offsetHours, 0, 0, 0);
+    return normalizedDate;
+};
+
+export const cleanDateString = (dateString) => {
+    return dateString.replace(/(\d+)(st|nd|rd|th)/, '$1');
+};
+
 function flattenRewards(rewards, result = {rewards: [], chances: []}, chances = []) {
     rewards.forEach(reward => {
         if (reward["@type"] === "type.googleapis.com/ResourceRewardDTO") {

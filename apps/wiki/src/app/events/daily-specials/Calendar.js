@@ -1,5 +1,6 @@
 import React from 'react';
 import { getItemData } from "@/src/shared-resources/utils/utils";
+import { calculateHoursBetween, cleanDateString, normalizeToNoon } from '@/src/shared-resources/utils/utils';
 
 import allEvents from "../data";
 
@@ -13,27 +14,10 @@ const Calendar = (props) => {
 
     const event = getEvent();
 
-    const cleanDateString = (dateString) => {
-        return dateString.replace(/(\d+)(st|nd|rd|th)/, '$1');
-    };
-
-    const calculateDaysSinceStart = (startDate) => {
-        const cleanedDate = cleanDateString(startDate);
-        const betaStartDate = new Date(cleanedDate);
-        const today = new Date();
-
-        if (isNaN(betaStartDate)) {
-            console.error("Invalid date:", cleanedDate);
-            return 0;
-        }
-
-        const timeDifference = today - betaStartDate;
-        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-        return Math.max(1, daysDifference + 1);
-    };
-
-    const daysPassed = props.daysPassed || calculateDaysSinceStart(event.betaStartDate);
+    const today = new Date();
+    const daysPassed = props.daysPassed;
+    const hoursPassed = calculateHoursBetween(normalizeToNoon(cleanDateString(event.startDate)), today);
+    const todaysDay = Math.floor(hoursPassed / 24) + 1;
     
     const showRevealNext = daysPassed < event.dailySpecials.length;
 
@@ -64,15 +48,20 @@ const Calendar = (props) => {
                         {dailySpecialChunks.map((week, weekIndex) => (
                             <React.Fragment key={weekIndex}>
                                 <tr>
-                                    {week.map((dailySpecial, dayIndex) => (
-                                        <th key={dayIndex} style={{ width: '142px', wordWrap: 'break-word' }}>
-                                            <div>
-                                                {dailySpecial.resource === "nextPrizePlaceholder"
-                                                    ? "?"
-                                                    : `Day ${weekIndex * 7 + dayIndex + 1}`}
-                                            </div>
-                                        </th>
-                                    ))}
+                                    {week.map((dailySpecial, dayIndex) => {
+                                        const currentDay = weekIndex * 7 + dayIndex + 1;
+                                        return (
+                                            <th key={dayIndex} style={{ width: '142px', wordWrap: 'break-word' }}>
+                                                <div>
+                                                    {dailySpecial.resource === "nextPrizePlaceholder"
+                                                        ? "?"
+                                                        : (currentDay === todaysDay 
+                                                            ? `⪼ Day ${currentDay} ⪻`
+                                                            : `Day ${currentDay}`)}
+                                                </div>
+                                            </th>
+                                        );
+                                    })}
                                     {week.length < 7 && Array(7 - week.length).fill(null).map((_, index) => (
                                         <td key={`empty-${index}`} style={{ width: '142px' }} />
                                     ))}

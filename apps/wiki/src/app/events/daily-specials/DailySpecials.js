@@ -2,7 +2,7 @@ import "./DailySpecials.css";
 import Prologue from "@/src/components/prologue/Prologue";
 import SectionDivider from "@/src/components/section-divider/SectionDivider";
 import H1 from "@/src/components/h1/H1";
-import { calculateDaysBetween } from "@/src/shared-resources/utils/utils";
+import { calculateDaysBetween, normalizeToNoon, calculateHoursBetween, cleanDateString } from "@/src/shared-resources/utils/utils";
 import Calendar from "./Calendar";
 import DailySpecialWrapper from "./DailySpecialWrapper";
 import { customizationsImages } from "../_data/customizationsImages";
@@ -18,9 +18,9 @@ const DailySpecials = (props) => {
     const event = getEvent();
 
     const today = new Date();
-    const todayString = today.toLocaleString('en-US', { timeZone: 'CET', month: 'long', day: 'numeric', year: 'numeric' });
 
-    const daysPassed = calculateDaysBetween(event.betaStartDate, todayString) + 1;
+    const hoursPassed = calculateHoursBetween(normalizeToNoon(cleanDateString(event.betaStartDate)), today);
+    const daysPassed = Math.floor(hoursPassed / 24) + 1;
     const dailySpecialsToDisplay = event.dailySpecials.slice(0, daysPassed);
     
     let customizationImages = customizationsImages[getEvent().codeName];
